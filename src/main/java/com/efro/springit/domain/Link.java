@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -20,6 +23,6 @@ public class Link {
 
     private String url;
 
-    // Comments
-
+    @OneToMany(mappedBy = "link")
+    private List comments = new ArrayList<>();
 }
