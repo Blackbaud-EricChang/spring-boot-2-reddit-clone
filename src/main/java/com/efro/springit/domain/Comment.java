@@ -17,8 +17,6 @@ public class Comment extends Auditable {
     @GeneratedValue
     private Long id;
 
-    private Long linkId;
-
     private String body;
 
     @ManyToOne
