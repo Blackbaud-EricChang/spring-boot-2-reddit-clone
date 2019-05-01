@@ -2,6 +2,8 @@ package com.efro.springit.domain;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -10,6 +12,7 @@ import javax.persistence.ManyToOne;
 
 @Entity
 @NoArgsConstructor
+@RequiredArgsConstructor
 @Data
 public class Comment extends Auditable {
 
@@ -17,8 +20,10 @@ public class Comment extends Auditable {
     @GeneratedValue
     private Long id;
 
+    @NonNull
     private String body;
 
     @ManyToOne
+    @NonNull
     private Link link;
 }
