@@ -28,7 +28,8 @@ public class SpringitApplication {
      *
      * Autowire in the Repositories to save initial data.
      */
-    @Bean
+    // Comment out the @Bean to stop adding new records on load.
+    // @Bean
     CommandLineRunner runner(LinkRepository linkRepository, CommentRepository commentRepository) {
         return args -> {
             // 1. Create and save a Link
